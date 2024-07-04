@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side-by-Side Images with Buttons</title>
+</head>
+<style>
+    #join-us {
+        background-color: #c1e1fa;
+    }
+
+
+
+    .join-us {
+        background-color: #c1e1fa;
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 80px;
+        margin-left: 130px;
+    }
+
+    .image-container .image-wrapper {
+        position: relative;
+        width: 45%;
+        height: 200% overflow: hidden;
+    }
+
+    .image-container img {
+        display: block;
+        width: 80%;
+        height: 200%;
+        object-fit: cover;
+        border-radius: 50px;
+    }
+
+    .image-container .button-overlay {
+        position: relative;
+        bottom: 100px;
+        left: 20%;
+        padding: 10px 50px;
+        font-size: 24px;
+        background-color: #c1e1fa;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    .button-overlay:hover {
+        background-color: azure;
+    }
+</style>
+
+<body class="join-us">
+    <div class="image-container">
+        <div class="image-wrapper">
+            <img src="volunteer.jpg" alt="Volunteer Image">
+            <a href="Volunteer.html"><button class="button-overlay">VOLUNTEER</button></a>
+        </div>
+        <div class="image-wrapper">
+            <img src="organization.jpeg" alt="Organisation Image">
+            <a href="Organisation.html"><button class="button-overlay">ORGANISATION</button></a>
+        </div>
+    </div>
+
+</body>
+
+</html>

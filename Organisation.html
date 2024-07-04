@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #c1e1fa;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: 100px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container {
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 10px;
+
+    }
+
+    form h1 {
+        margin-bottom: 15px;
+        font-family: 'Aclonica', sans-serif;
+
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea,
+    button,
+    input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #c1e1fa;
+        font-size: medium;
+        color: rgb(13, 1, 1);
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+    .toggle-buttons {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .toggle-buttons button {
+        margin: 2px 10px 2px 0px;
+        padding: 8px 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        background-color: #b9bec6;
+    }
+
+    .toggle-buttons button.active {
+        background-color: #b9bec6;
+    }
+
+    .file-upload-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+    }
+
+    .file-upload-container label {
+        margin-right: 10px;
+
+    }
+
+    .file-upload-container input[type="file"] {
+        flex: 1;
+
+    }
+
+    @media (max-width: 600px) {
+        .container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        img {
+            margin: 0 0 20px 0;
+        }
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="form-container">
+            <form id="login-form">
+                <h1>Login</h1>
+                <input type="text" id="login-username" placeholder="Username" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <form id="signup-form" style="display: none;">
+                <h1>Signup</h1>
+                <input type="text" id="org-username" placeholder="Organisation Username" required>
+                <input type="text" id="org-name" placeholder="Organisation Name" required>
+                <input type="password" id="org-password" placeholder="Password" required>
+                <input type="text" id="org-title" placeholder="Title" required>
+                <textarea id="org-description" placeholder="Description"></textarea>
+                <input type="text" id="org-contact" placeholder="Contact Info" required>
+                <div class="file-upload-container">
+                    <label for="org-certification">Upload your government certification here:</label>
+                    <input type="file" id="org-certification" accept=".pdf,.doc,.docx" required>
+                </div>
+                <a href="login.html"><button type="submit">Signup</button></a>
+            </form>
+        </div>
+
+
+        <div class="toggle-buttons">
+            <button id="login-btn">Login</button>
+            <button id="signup-btn">Signup</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const loginBtn = document.getElementById('login-btn');
+            const signupBtn = document.getElementById('signup-btn');
+
+            loginBtn.addEventListener('click', function () {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            });
+
+            signupBtn.addEventListener('click', function () {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            });
+
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const username = document.getElementById('login-username').value;
+                const password = document.getElementById('login-password').value;
+
+                // Example: Simulated login check (replace with actual login logic)
+                // Here, we're checking against a hardcoded user for simplicity
+                if (username === 'john_doe' && password === 'password1') {
+                    redirectToProfile(username); // Redirect to profile page with user data
+                } else {
+                    alert('Invalid username or password. Please try again.');
+                }
+            });
+
+            signupForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const orgUsername = document.getElementById('org-username').value;
+                const orgName = document.getElementById('org-name').value;
+                const orgTitle = document.getElementById('org-title').value;
+                const orgDescription = document.getElementById('org-description').value;
+                const orgContact = document.getElementById('org-contact').value;
+                const orgCertification = document.getElementById('org-certification').value; // Assuming URL for simplicity
+
+                // Example: Simulated signup process (redirect to profile with user data)
+                redirectToProfile(orgUsername, orgName, orgTitle, orgDescription, orgContact, orgCertification);
+            });
+
+            // Function to redirect to profile page with user data
+            function redirectToProfile(username, orgName, orgTitle, orgDescription, orgContact, orgCertification) {
+                const profileUrl = `profile.html?username=${username}&orgName=${orgName}&orgTitle=${orgTitle}&orgDescription=${orgDescription}&orgContact=${orgContact}&orgCertification=${orgCertification}`;
+                window.location.href = profileUrl;
+            }
+        });
+
+    </script>
+</body>
+
+</html>

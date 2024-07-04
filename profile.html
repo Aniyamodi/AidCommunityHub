@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap">
+    <script src="httpss;//kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&display=swap" rel="stylesheet">
+</head>
+<style>
+    *,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: #ebebeb;
+        font-family: 'Fira Sans', sans-serif;
+    }
+
+    .main-menu {
+        background-color: #fff;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 0px 0px 20px #d4d4d4;
+
+        width: 70px;
+        height: 100vh;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        overflow-x: hidden;
+        overflow-y: hidden;
+        white-space: nowrap;
+
+        transition: .3s ease;
+    }
+
+    .main-menu:hover {
+        width: 250px;
+        overflow-y: scroll;
+    }
+
+    .main-menu .menu-item {
+        padding: 10px;
+    }
+
+    .main-menu .menu-item:hover {
+        background-color: #d6d6d6;
+        cursor: pointer;
+    }
+
+    .main-menu .menu-item .fa {
+        color: gray;
+        width: 40px;
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    .main-menu .menu-item:hover>.fa {
+        color: #5cb2f4;
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #bbbbbb;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="main-menu">
+            <ul>
+                <section class="home">
+                    <li class="menu-item"><i class="fa fa-home"></i>Home</li>
+                    <li class="menu-item"><i class="fa fa-user-circle"></i>Dashboard</li>
+                    <li class="menu-item"><i class="fa fa-question-circle-o"></i>About</li>
+                    <li class="menu-item"><i class="fa fa-envelope"></i>Messages</li>
+                    <li class="menu-item"><i class="fa fa-phone"></i>Contact</li>
+                    <li class="menu-item"><i class="fa fa-paper-plane"></i>Feedback</li>
+                    <li class="menu-item"><i class="fa fa-cog"></i>Settings</li>
+                </section>
+                <section class="social">
+                    <li class="menu-item"><i class="fa fa-facebook"></i>Facebook</li>
+                    <li class="menu-item"><i class="fa fa-twitter"></i>Twitter</li>
+                    <li class="menu-item"><i class="fa fa-github"></i>Github</li>
+                </section>
+                <li class="menu-item"><i class="fa fa-sign-out"></i>Sign out</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+        </div>
+    </div>
+
+</body>
+
+</html>
